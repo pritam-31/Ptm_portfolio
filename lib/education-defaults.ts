@@ -1,0 +1,28 @@
+import { EducationItem } from '@/types'
+
+export const defaultEducation: EducationItem[] = [
+  {
+    id: 'btech',
+    degree: 'B.Tech — Electronics & Communication Engineering',
+    institution: 'Gandhi Institute of Excellent Technocrats (GIET), Bhubaneswar',
+    period: 'Aug 2024 – Jun 2028',
+    score: 'CGPA 8.95 / 10',
+    theme: 'cyan',
+  },
+  {
+    id: 'hs',
+    degree: 'Higher Secondary (Science) — CHSE',
+    institution: 'AIMS H.S. School of Science, Sambalpur',
+    period: '2024',
+    score: '72.66%',
+    theme: 'violet',
+  },
+  {
+    id: 'secondary',
+    degree: 'Secondary — BSE',
+    institution: 'M.L. High School, Attabira',
+    period: '2022',
+    score: '80%',
+    theme: 'emerald',
+  },
+]

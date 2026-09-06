@@ -1,0 +1,49 @@
+[
+  {
+    "id": "ptmgpt",
+    "title": "PtmGPT — Biomedical Generative AI",
+    "description": "Fine-tuned an open-source Gemma-family model on biomedical text and image data, then evaluated its outputs against expected clinical results.",
+    "technologies": [
+      "Python",
+      "Gemma",
+      "Biomedical AI",
+      "VLM"
+    ],
+    "image": "",
+    "mediaUrl": "",
+    "mediaType": "image",
+    "githubUrl": "https://github.com/pritam-31"
+  },
+  {
+    "id": "wanderlust",
+    "title": "Wanderlust — Travel & Accommodation Platform",
+    "description": "Airbnb-style full-stack platform with Passport authentication, Cloudinary uploads, CRUD listings, reviews, and Leaflet/OpenStreetMap maps.",
+    "technologies": [
+      "React",
+      "EJS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Leaflet"
+    ],
+    "image": "",
+    "mediaUrl": "",
+    "mediaType": "image",
+    "githubUrl": "https://github.com/pritam-31"
+  },
+  {
+    "id": "interview-practice",
+    "title": "Interview Practice Platform",
+    "description": "Full-stack technical and HR interview preparation platform with authentication, mock questions, resume analysis, and ATS feedback.",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Express",
+      "MongoDB"
+    ],
+    "image": "",
+    "mediaUrl": "",
+    "mediaType": "image",
+    "githubUrl": "https://github.com/pritam-31"
+  }
+]
