@@ -7,6 +7,7 @@ export const defaultContent: SiteContent = {
     name: 'Pritam Padhan',
     titleLine1: 'BUILDING THE',
     titleAccent: 'FUTURE WITH CODE',
+    photoUrl: '',
     description:
       'I\u2019m Pritam Padhan, a full-stack and mobile app developer and AI enthusiast building intelligent full-stack and mobile applications with React, React Native, Python, Node.js, and modern AI tooling.',
   },

@@ -5,6 +5,7 @@ import { useInView } from 'react-intersection-observer'
 import { GraduationCap, School, BookOpen } from 'lucide-react'
 import { EducationItem } from '@/types'
 import { useEducation } from '@/lib/education-api'
+import { WriteUnderline } from './ManimEffects'
 
 const themeMap = {
   cyan: {
@@ -55,6 +56,7 @@ export default function EducationSection() {
               Journey
             </span>
           </h2>
+          <WriteUnderline className="mt-4 mx-auto w-32" />
           <p className="mx-auto mt-4 max-w-2xl text-gray-400 text-base sm:text-lg">
             A strong foundation in electronics, computer science, and engineering.
           </p>

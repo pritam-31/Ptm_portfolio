@@ -1,12 +1,13 @@
 'use client'
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
-import { ExternalLink, GitBranch, ImageUp, Lock, LogOut, Plus, Trash2, FolderKanban, Layers, GraduationCap, Briefcase, Type } from 'lucide-react'
+import { ExternalLink, GitBranch, ImageUp, Lock, LogOut, Plus, Trash2, FolderKanban, Layers, GraduationCap, Briefcase, Type, Camera } from 'lucide-react'
 import { Project } from '@/types'
 import SkillMatrixManager from './SkillMatrixManager'
 import EducationManager from './EducationManager'
 import ExperienceManager from './ExperienceManager'
 import ContentForm from './ContentForm'
+import PhotoManager from './PhotoManager'
 
 const emptyProject = {
   title: '',
@@ -18,7 +19,7 @@ const emptyProject = {
   mediaFile: null as File | null,
 }
 
-type AdminTab = 'projects' | 'skills' | 'education' | 'experience' | 'content'
+type AdminTab = 'projects' | 'skills' | 'education' | 'experience' | 'content' | 'photo'
 
 export default function AdminPanel() {
   const [tab, setTab] = useState<AdminTab>('projects')
@@ -239,6 +240,13 @@ export default function AdminPanel() {
                 <Type className="h-4 w-4" />
                 Site Content
               </button>
+              <button
+                onClick={() => setTab('photo')}
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${tab === 'photo' ? 'bg-cyan-400 text-slate-950' : 'border border-white/10 text-gray-300 hover:text-white'}`}
+              >
+                <Camera className="h-4 w-4" />
+                Photo
+              </button>
             </div>
           )}
         </div>
@@ -377,6 +385,12 @@ export default function AdminPanel() {
         {isLoggedIn && tab === 'content' ? (
           <div className="lg:col-span-2">
             <ContentForm />
+          </div>
+        ) : null}
+
+        {isLoggedIn && tab === 'photo' ? (
+          <div className="lg:col-span-2">
+            <PhotoManager />
           </div>
         ) : null}
       </div>

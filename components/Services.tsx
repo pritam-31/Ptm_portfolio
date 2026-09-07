@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import { WriteUnderline } from './ManimEffects'
 import { 
   Cpu, 
   Globe, 
@@ -83,6 +84,7 @@ export default function Services() {
           <h2 className="font-space-grotesk text-4xl md:text-5xl font-bold text-white mb-4">
             My <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Capabilities</span>
           </h2>
+          <WriteUnderline className="mt-4 mx-auto w-40" />
           <p className="text-gray-400 max-w-2xl mx-auto text-lg">
             The engineering toolkit I use to turn ideas into working products
           </p>

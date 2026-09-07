@@ -128,6 +128,7 @@ export interface SiteContent {
     titleLine1: string
     titleAccent: string
     description: string
+    photoUrl?: string
   }
   about: {
     badge: string

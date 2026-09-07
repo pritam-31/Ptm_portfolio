@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedBackground from './AnimatedBackground'
+import { setSplashDone } from '@/lib/splash-state'
 
 export default function SplashScreen() {
   const [show, setShow] = useState(true)
@@ -13,7 +14,7 @@ export default function SplashScreen() {
   }, [])
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={setSplashDone}>
       {show && (
         <motion.div
           key="splash"

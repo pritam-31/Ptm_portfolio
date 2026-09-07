@@ -17,6 +17,7 @@ import {
 } from 'react-icons/si'
 import { FaAws } from 'react-icons/fa'
 import { IconType } from 'react-icons'
+import { WriteUnderline } from './ManimEffects'
 
 type TechItem = {
   icon: IconType
@@ -78,6 +79,7 @@ export default function TechStack() {
           <h2 className="mb-5 font-space-grotesk text-3xl font-bold text-white md:text-5xl">
             One system for AI, full-stack, and software foundations
           </h2>
+          <WriteUnderline className="mb-5 w-40" />
           <p className="max-w-xl text-lg leading-8 text-slate-300">
             Technologies I use across research prototypes, web applications, APIs, databases, and deployment workflows.
           </p>

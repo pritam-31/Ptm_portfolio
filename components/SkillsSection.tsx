@@ -64,6 +64,7 @@ export default function SkillsSection() {
               Bring to the Table
             </span>
           </h2>
+          <WriteUnderline className="mt-4 mx-auto w-32" />
           <p className="mt-4 max-w-2xl mx-auto text-gray-400 text-base sm:text-lg">
             A categorized view of the tools and technologies I use to design, build, and ship products end-to-end.
           </p>

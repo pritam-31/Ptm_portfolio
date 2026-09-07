@@ -2,28 +2,24 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import ThreeScene from './ThreeScene'
 import { useSiteContent } from '@/lib/content-api'
 import { WritePath } from './ManimEffects'
-
-const PHOTO_SRC = 'https://github.com/pritam-31.png?size=512'
+import ParticlePhoto from './ParticlePhoto'
 
 export default function Hero() {
   const [photoFailed, setPhotoFailed] = useState(false)
   const hero = useSiteContent().hero
 
-  const photo = photoFailed ? (
+  const handlePhotoError = useCallback(() => setPhotoFailed(true), [])
+
+  const photo = photoFailed || !hero.photoUrl ? (
     <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-cyan-500/25 via-slate-900 to-blue-600/25">
       <span className="font-space-grotesk text-5xl font-bold text-white">PP</span>
     </div>
   ) : (
-    <img
-      src={PHOTO_SRC}
-      alt="Pritam Padhan"
-      onError={() => setPhotoFailed(true)}
-      className="h-full w-full object-cover"
-    />
+    <ParticlePhoto src={hero.photoUrl} onError={handlePhotoError} />
   )
 
   return (

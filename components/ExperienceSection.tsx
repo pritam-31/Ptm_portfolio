@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Briefcase, Code2, Cpu, Trophy } from 'lucide-react'
 import { Experience } from '@/types'
 import { useExperience } from '@/lib/experience-api'
+import { WriteUnderline } from './ManimEffects'
 
 const iconMap = {
   internship: Briefcase,
@@ -226,6 +227,7 @@ export default function ExperienceSection() {
               Worked & Built
             </span>
           </h2>
+          <WriteUnderline className="mt-4 mx-auto w-32" />
         </motion.div>
 
         {/* Timeline */}

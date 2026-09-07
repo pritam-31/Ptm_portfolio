@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ExternalLink, FolderKanban, GitBranch } from 'lucide-react'
 import { Project } from '@/types'
+import { WriteUnderline } from './ManimEffects'
 
 export default function ProjectsShowcase() {
   const [projects, setProjects] = useState<Project[]>([])
@@ -36,6 +37,7 @@ export default function ProjectsShowcase() {
             <h2 className="font-space-grotesk text-3xl font-bold text-white md:text-5xl">
               Featured <span className="text-cyan-300">Projects</span>
             </h2>
+            <WriteUnderline className="mt-2 w-36" />
           </div>
           <Link
             href="/admin"
