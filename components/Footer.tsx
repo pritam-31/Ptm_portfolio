@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useCallback, type MouseEvent } from 'react'
-import { Hexagon, Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
+import { Mail, Phone, MapPin, ArrowUp } from 'lucide-react'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 import { useSiteContent } from '@/lib/content-api'
 
@@ -45,7 +45,6 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Hexagon className="w-8 h-8 text-blue-500" />
               <span className="font-space-grotesk text-xl font-bold text-white">
                 Pritam<span className="text-blue-500"> Padhan</span>
               </span>
