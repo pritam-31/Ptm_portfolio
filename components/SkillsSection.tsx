@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Lock, Wrench } from 'lucide-react'
 import { fetchPublicSkills, PublicSkill } from '@/lib/skills-api'
 import { techIcon, categoryIcon } from '@/lib/skill-icons'
+import { WriteUnderline } from './ManimEffects'
 
 function SkillLoadingState() {
   return (

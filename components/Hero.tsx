@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import ThreeScene from './ThreeScene'
 import { useSiteContent } from '@/lib/content-api'
+import { WritePath } from './ManimEffects'
 
 const PHOTO_SRC = 'https://github.com/pritam-31.png?size=512'
 
@@ -42,15 +43,15 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="mb-8 flex justify-center lg:hidden"
             >
-              <div className="relative">
+              <div className="relative flex items-center justify-center">
                 <div className="absolute -inset-3 animate-[tech-orbit_24s_linear_infinite] rounded-full border-2 border-dashed border-cyan-400/25" />
-                <div className="h-28 w-28 sm:h-36 sm:w-36 overflow-hidden rounded-full border-2 border-cyan-400/40 bg-slate-900 shadow-[0_0_35px_rgba(34,211,238,0.35)]">
+                <div className="aspect-square w-[clamp(7rem,22vw,10rem)] overflow-hidden rounded-full border-2 border-cyan-400/40 bg-slate-900 shadow-[0_0_35px_rgba(34,211,238,0.35)] sm:w-[clamp(8rem,24vw,12rem)]">
                   {photo}
                 </div>
               </div>
             </motion.div>
 
-            <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="inline-block px-4 py-1.5 bg-cyan-500/15 text-cyan-300 rounded-full text-sm font-medium mb-6 border border-cyan-400/25">
+            <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="inline-block max-w-full px-4 py-1.5 bg-cyan-500/15 text-cyan-300 rounded-full text-[clamp(0.75rem,2.5vw,0.875rem)] font-medium mb-6 text-center leading-snug border border-cyan-400/25">
               {hero.badge}
             </motion.span>
 
@@ -87,13 +88,21 @@ export default function Hero() {
             className="hidden lg:flex items-center justify-center"
           >
             <div className="relative flex items-center justify-center">
-              <div className="absolute h-56 w-56 rounded-full bg-cyan-400/20 blur-3xl xl:h-72 xl:w-72" />
+              <div className="absolute aspect-square w-[clamp(14rem,28vw,20rem)] rounded-full bg-cyan-400/20 blur-3xl xl:w-[clamp(16rem,30vw,24rem)]" />
               <div
-                className="tech-orbit-ring absolute h-80 w-80 rounded-full border border-dashed border-cyan-300/25 xl:h-96 xl:w-96"
+                className="tech-orbit-ring absolute aspect-square w-[clamp(18rem,34vw,24rem)] rounded-full border border-dashed border-cyan-300/25 xl:w-[clamp(22rem,36vw,30rem)]"
                 style={{ animationDuration: '40s' }}
               />
-              <div className="absolute h-[17rem] w-[17rem] rounded-full border border-cyan-400/15 xl:h-[20rem] xl:w-[20rem]" />
-              <div className="relative h-64 w-64 overflow-hidden rounded-full border-2 border-white/10 bg-slate-900 shadow-[0_0_50px_rgba(34,211,238,0.25)] xl:h-80 xl:w-80">
+              <div className="absolute aspect-square w-[clamp(16rem,30vw,20rem)] rounded-full border border-cyan-400/15 xl:w-[clamp(19rem,33vw,24rem)]" />
+              {/* Manim-style Write: outer orbit ring draws itself in */}
+              <WritePath
+                d="M 300 60 A 240 240 0 1 1 299.9 60"
+                strokeWidth={1.5}
+                duration={2}
+                delay={0.2}
+                opacity={0.35}
+              />
+              <div className="relative aspect-square w-[clamp(14rem,26vw,18rem)] overflow-hidden rounded-full border-2 border-white/10 bg-slate-900 shadow-[0_0_50px_rgba(34,211,238,0.25)] xl:w-[clamp(18rem,28vw,22rem)]">
                 {photo}
               </div>
             </div>

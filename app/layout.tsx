@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import CursorEffect from '@/components/CursorEffect'
+import SplashScreen from '@/components/SplashScreen'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
+          <SplashScreen />
           <CursorEffect />
           {children}
         </ThemeProvider>
