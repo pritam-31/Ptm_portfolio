@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
+import content from '@/data/content.json'
 import './globals.css'
 import { ThemeProvider } from 'next-themes'
 import CursorEffect from '@/components/CursorEffect'
@@ -11,6 +12,9 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space
 export const metadata: Metadata = {
   title: 'Pritam Padhan | AI & Full-Stack Developer',
   description: 'Portfolio of Pritam Padhan, an Electronics & Communication Engineering undergraduate and full-stack developer.',
+  icons: {
+    icon: content.hero.photoUrl,
+  },
 }
 
 export default function RootLayout({
