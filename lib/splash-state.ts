@@ -22,3 +22,13 @@ export function whenSplashDone(listener: Listener): () => void {
     listeners.delete(listener)
   }
 }
+
+let photoPlayed = false
+
+export function markPhotoAnimationPlayed() {
+  photoPlayed = true
+}
+
+export function shouldPlayPhotoAnimation() {
+  return !photoPlayed
+}

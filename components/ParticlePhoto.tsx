@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { whenSplashDone } from '@/lib/splash-state'
+import { markPhotoAnimationPlayed, shouldPlayPhotoAnimation, whenSplashDone } from '@/lib/splash-state'
 
 type Particle = {
   x: number
@@ -16,7 +16,7 @@ type Particle = {
 
 export default function ParticlePhoto({ src, onError }: { src: string; onError?: () => void }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [revealed, setRevealed] = useState(false)
+  const [revealed, setRevealed] = useState(() => !shouldPlayPhotoAnimation())
   const settledRef = useRef(false)
   const loadedRef = useRef(false)
   const splashReadyRef = useRef(false)
@@ -26,6 +26,10 @@ export default function ParticlePhoto({ src, onError }: { src: string; onError?:
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
+
+    if (!shouldPlayPhotoAnimation()) {
+      return () => {}
+    }
 
     let animId = 0
     let particles: Particle[] = []
@@ -138,6 +142,7 @@ export default function ParticlePhoto({ src, onError }: { src: string; onError?:
       if (started || !splashReadyRef.current || !loadedRef.current) return
       if (canvas.getBoundingClientRect().width <= 0) return
       started = true
+      markPhotoAnimationPlayed()
       settledRef.current = false
       setRevealed(false)
       assemble()
